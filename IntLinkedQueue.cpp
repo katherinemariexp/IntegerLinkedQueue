@@ -106,7 +106,22 @@ int main() {
                     q.displayList();
                     break;
                 }
+                case 'a': 
+                {
+                    cout << "Enter a number: ";
+                    cin >> num;
+                    cout << "You have entered: " << num << endl;
+                    q.append(num);
+                    q.displayList();
+                    break;
+                }
                 
+                case 'R':
+                {
+                    q.fremove();
+                    q.displayList();
+                    break;
+                }
                 
                 case 'q': // exit Queue sub-menu
                 case 'Q':

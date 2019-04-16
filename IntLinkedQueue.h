@@ -75,8 +75,19 @@ bool rremove(int &); // rear remove
 
     }
     
-    void fremove(int n){
-    
+    void fremove() {
+
+        Node *p;
+        
+        if(!front)
+            return;
+        else
+        {
+            p = front->next;
+            delete front;
+            front = p;
+        }
+        
     }
     
     void rremove(int n){
