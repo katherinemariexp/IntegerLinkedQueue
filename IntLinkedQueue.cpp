@@ -18,8 +18,6 @@ void menu()
     << " a - to append ~ push back\n"
     << " R - to Remove ~ pop front\n"
     << " r - to Remove ~ pop back\n"
-    << " G - to get by subscription\n"
-    << " P - to put by subscription\n"
     << " L - Length of Queue?\n"
     << " C - to Clear\n"
     << " Q - to Q this program\n"
@@ -123,6 +121,20 @@ int main() {
                     break;
                 }
                 
+                case 'r':
+                {
+                    q.rremove();
+                    q.displayList();
+                    break;
+                }
+                
+                case 'L':
+                case 'l':
+                {
+                    cout << "Number of entries in queue: " << q.getSize();
+                    
+                    break;
+                }
                 case 'q': // exit Queue sub-menu
                 case 'Q':
                     stay = false;

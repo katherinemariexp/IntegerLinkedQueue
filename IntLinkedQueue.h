@@ -90,7 +90,31 @@ bool rremove(int &); // rear remove
         
     }
     
-    void rremove(int n){
+    void rremove(){
+        
+        Node *p;
+        Node *pp;
+        
+        if (!front)
+            return;
+        else if (!front->next)
+        {
+            p = front;
+            delete front;
+            front = p;
+        }
+        else
+        {
+            p = front;
+            while (p->next != nullptr)
+            {
+                pp = p;
+                p = p->next;
+            }
+            
+            pp->next = nullptr;
+            delete p;
+        }
         
     }
     
@@ -108,6 +132,22 @@ bool rremove(int &); // rear remove
             
             p = p->next;
         }
+    }
+    
+    int getSize()  
+    {
+        
+        int count = 0;
+        
+        p = front;
+        while(p != nullptr)
+        {
+            count++;
+            p = p->next;
+        }
+    return count;
+
+
     }
     
 };
