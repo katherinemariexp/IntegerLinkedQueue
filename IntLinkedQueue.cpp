@@ -1,3 +1,11 @@
+// Description: Assignment 9 - Int Linked Queue
+// Author: Katherine-Marie Gonzales
+// COMSC200 - 5001
+// April 15, 2019
+// Status: Incomplete: Missing commas
+
+//IntLinkedQueue.cpp
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -40,14 +48,12 @@ int main() {
     vector<int> input(s, end(s));
     int num;
     
-    
     int input_size = input.size();
     for (auto item : input ) {
         cout << item << ((input_size <= 1) ? " " : ", ");
         input_size--;
     }
     cout << endl;
-    
     
     for (auto i: input) q.append( i );
     cout << "\nUse menu to test a Queue class instance.\n";
@@ -70,16 +76,15 @@ int main() {
             char ch = choice[0];
             vector<string> dump;
             string value;
-            switch(ch) { // main menu switch starts
+            switch(ch) { 
             
                 case 'n':
                 case 'N':
                 {
-                    // if(!q.isEmpty()) q.clear();
                     cout << "\t\tEnter a line of comma (,) delmited data set: ";
-                    getline (cin, input); // user input -> string
-                    ss << input; // string -> stream
-                    while ( getline(ss, token, ',') ) { // stream -> string token
+                    getline (cin, input); 
+                    ss << input; 
+                    while ( getline(ss, token, ',') ) { 
                         stringstream sst(token);
                         sst >> item;
                         q.append(item);
@@ -104,6 +109,7 @@ int main() {
                     q.displayList();
                     break;
                 }
+                
                 case 'a': 
                 {
                     cout << "Enter a number: ";
@@ -135,12 +141,19 @@ int main() {
                     
                     break;
                 }
-                case 'q': // exit Queue sub-menu
+                
+                case 'c':
+                case 'C':
+                {
+                    q.clear();
+                    break;
+                }
+                case 'q': 
                 case 'Q':
                     stay = false;
                     break;
                 
-                case 'h': // help - display menu
+                case 'h': 
                 case 'H':
                 case '?':
                     menu();
@@ -149,8 +162,10 @@ int main() {
                 default:
                     cout << "\nInvalid Selection!\nTry again!\n\n";
             
-            } // end of menu switch
-        } // only process single character
-    } // end of main menu while
+            } 
+        } 
+    } 
     cout << "Program exit!\n";
-} // end of main
+    
+    return 0;
+} 

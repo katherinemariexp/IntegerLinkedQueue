@@ -1,3 +1,11 @@
+// Description: Assignment 9 - Int Linked Queue
+// Author: Katherine-Marie Gonzales
+// COMSC200 - 5001
+// April 15, 2019
+// Status: Incomplete: Missing commas
+
+//IntLinkedQueue.h
+
 #ifndef INTLINKEDQUEUE_H
 #define INTLINKEDQUEUE_H
 
@@ -12,42 +20,25 @@ class SubsError{
     int getValue(){ return number; }
 };
 
-
 class IntLinkedQueue {
 private:
     struct Node {
         int data;
         Node *next;
     };
-    Node *front; // front
-    Node *rear; // end
-    Node *p; // traverse
-    Node *pp; // previous
-    int size; //
+    Node *front; 
+    Node *rear; 
+    Node *p; 
+    Node *pp; 
+    int size;
     
 public:
-    // Default Constructor 
+
     IntLinkedQueue() : front(nullptr), rear(nullptr), size(0) {}
     
-    // Destructor; // return all dynamically allocated nodes
+
     ~IntLinkedQueue() { }
     
-    
-    /*The Integer Linked Queue, IntLinkedQueue class should have the following member functions: 
-
-Constructor; 
-Destructor; // return all dynamically allocated nodes
-bool isEmpty(); 
-int getSize(); // size of the Queue
-void clear(int);
-string toString(); // return a string of a comma(,) delimited items e.g. "1, 2, 3, 4"
-Front and Rear port access: the following 4 methods return operation success or failure as True/False, and pass the item value In/Out as a reference.
-
-bool add(int &);  // Front add 
-bool append(int &) // Rear append
-bool fremove(int &);  // Front Remove
-bool rremove(int &); // rear remove
-*/
     void isEmpty() const{
         if (!front)
             cout << "LinkedQueue is empty";
@@ -118,7 +109,6 @@ bool rremove(int &); // rear remove
         
     }
     
-    // fill the other methods below
     
     void displayList() const
     {
@@ -132,11 +122,11 @@ bool rremove(int &); // rear remove
             
             p = p->next;
         }
+        
     }
     
     int getSize()  
     {
-        
         int count = 0;
         
         p = front;
@@ -146,9 +136,21 @@ bool rremove(int &); // rear remove
             p = p->next;
         }
     return count;
-
-
     }
     
+    void clear() 
+    {
+        p = front;
+        while (p != nullptr)
+        {
+            front = p->next;
+            delete p;
+            p = front;
+       }
+       cout << "Queue is cleared" << endl;
+       
+    }
+
+
 };
 #endif
